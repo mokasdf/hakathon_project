@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OneSchool &mdash; Website by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="static/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/jquery-ui.css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="static/css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="static/css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="static/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="static/css/aos.css">
+
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <style>
+        
+
+        .container-1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .chatbot-2 {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .messages-3 {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            overflow-y: auto;
+            height: 500px;
+        }
+
+        .message-4 {
+            margin-bottom: 10px;
+        }
+
+        .user-message-5 {
+            text-align: right;
+            color: #871717;
+        }
+
+        .bot-message-6 {
+            text-align: left;
+            color: #007BFF;
+        }
+
+        .input-form-7 {
+            display: flex;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .input-field-8 {
+            flex: 1;
+            background-color: #f5f5f5;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            padding: 10px;
+        }
+
+        .send-button-9 {
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1rem;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .send-button-9:hover {
+            background-color: #444;
+        }
+    </style>
+
+
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+    
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target mb-5" role="banner">
+      
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+          <div class="site-logo mr-auto w-25"><a href="index.html">OneSchool</a></div>
+
+          <div class="mx-auto text-center">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="#courses-section" class="nav-link">Courses</a></li>
+                <li><a href="#programs-section" class="nav-link">Programs</a></li>
+                <li><a href="#teachers-section" class="nav-link">Teachers</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="ml-auto w-25">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+                <li class="cta"><a href="#contact-section" class="nav-link"><span>Contact Us</span></a></li>
+              </ul>
+            </nav>
+            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
+          </div>
+        </div>
+      </div>
+      
+    </header>
+
+    <div class="intro-section" id="home-section" style="height: 110%;" >
+      
+        <div class="slide-1" style="background-image: url('static/images/hero_1.jpg');" data-stellar-background-ratio="0.5">
+         
+          <section class="vh-60" style="background-color: #eee;">
+              <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                  <div class="col-lg-12 col-xl-11" style="margin-top: 100px;">
+                    <div class="card text-black" style="border-radius: 25px;">
+                      <div class="card-body ">
+                        
+                          <input type="file">
+                          <button type="submit" class="send-button-9">generate_qa_from_document</button>
+                          <button type="submit" class="send-button-9">generate_insight_from_document</button>
+
+                        <div class="container-1">
+                          <div class="chatbot-2">
+                              <div class="messages-3" id="chat-messages">
+                                  <!-- Add messages here -->
+                              </div>
+                              <form class="input-form-7" onsubmit="sendMessage(event)">
+                                  <input type="text" class="input-field-8" id="user-input" placeholder="Type your message...">
+                                  <label class="send-button-9">
+                                      <input type="file" id="file-input" style="display: none;" onchange="handleFileSelect(event)">
+                                      Upload File
+                                  </label>
+                                  <button type="submit" class="send-button-9">Send</button>
+                              </form>
+                          </div>
+                      </div>
+                         
+                      <form action="/upload" method="post" enctype="multipart/form-data">
+                      <input type="file" name="file">
+                      <input type="submit" value="Upload">
+                  </form>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+  
+  
+  
+        </div>
+      </div>
+    
+    
+     
+    <footer class="footer-section bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>About OneSchool</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro consectetur ut hic ipsum et veritatis corrupti. Itaque eius soluta optio dolorum temporibus in, atque, quos fugit sunt sit quaerat dicta.</p>
+          </div>
+
+          <div class="col-md-3 ml-auto">
+            <h3>Links</h3>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Courses</a></li>
+              <li><a href="#">Programs</a></li>
+              <li><a href="#">Teachers</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h3>Subscribe</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt incidunt iure iusto architecto? Numquam, natus?</p>
+            <form action="#" class="footer-subscribe">
+              <div class="d-flex mb-5">
+                <input type="text" class="form-control rounded-0" placeholder="Email">
+                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+            <p>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+  
+    
+  </div> <!-- .site-wrap -->
+
+  <script src="static/js/jquery-3.3.1.min.js"></script>
+  <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="static/js/jquery-ui.js"></script>
+  <script src="static/js/popper.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/owl.carousel.min.js"></script>
+  <script src="static/js/jquery.stellar.min.js"></script>
+  <script src="static/js/jquery.countdown.min.js"></script>
+  <script src="static/js/bootstrap-datepicker.min.js"></script>
+  <script src="static/js/jquery.easing.1.3.js"></script>
+  <script src="static/js/aos.js"></script>
+  <script src="static/js/jquery.fancybox.min.js"></script>
+  <script src="static/js/jquery.sticky.js"></script>
+
+  
+  <script src="static/js/main.js"></script>
+    <script>
+    function sendMessage(event) {
+        event.preventDefault();
+        const userInput = document.getElementById('user-input').value;
+        const fileInput = document.getElementById('file-input');
+        
+        if (userInput.trim() !== '' || (fileInput.files.length > 0)) {
+            addMessage(userInput, 'user-message-5');
+            
+            if (fileInput.files.length > 0) {
+                // Process the uploaded file here
+                const fileName = fileInput.files[0].name;
+                addMessage(`File Uploaded: ${fileName}`, 'user-message-5');
+            }
+
+            // For demonstration, let's use a simple response
+            const botResponse = "I am a cool chatbot!";
+            addMessage(botResponse, 'bot-message-6');
+            document.getElementById('user-input').value = ''; // Clear the input field
+            fileInput.value = ''; // Clear the file input
+        }
+    }
+
+    function addMessage(message, className) {
+        const messagesDiv = document.getElementById('chat-messages');
+        const messageDiv = document.createElement('div');
+        messageDiv.innerHTML = message;
+        messageDiv.classList.add('message-4', className);
+        messagesDiv.appendChild(messageDiv);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to the bottom
+    }
+
+    function handleFileSelect(event) {
+        const fileInput = document.getElementById('file-input');
+        const fileName = event.target.files[0].name;
+        addMessage(`File Selected: ${fileName}`, 'user-message-5');
+    }
+</script>
+
+<!-- ... (remaining HTML code) ... -->
+  </body>
+</html>
